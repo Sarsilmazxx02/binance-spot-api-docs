@@ -3,6 +3,38 @@
 * Streams, endpoints, parameters, payloads, etc. described in the documents in this repository are considered **official** and **supported**.
 * The use of any other streams, endpoints, parameters, or payloads, etc. is **not supported**; **use them at your own risk and with no guarantees.**
 
+# diff --git "a/ActionOperating/ Sistem/Dinlenme,ap\304\261./Dosya" "b/ActionOperating/ Sistem/Dinlenme,ap\304\261./Dosya"
+yeni dosya modu 100644
+dizin 0000000..b81e378
+--- /dev/null
++++ "b/Eylemİşletim/Sistem/Dinlenme,ap\304\261./Dosya"	
+@@ -0,0 +1,26 @@
++```Html
++Mevcut koşucu sürümü: '2.319.1'
++İşletim Sistemi
++ Ubuntu
++ [2](https://github.com/vercel/turborepo/actions/runs/10638942872/job/29495923476#step:1:2)2.04.4
++ Uzun Vadeli
++Koşucu Resmi
++ Resim: ubuntu-22.04
++ Sürüm: 20240825.1.0
++ Dahil Yazılım: https://github.com/actions/runner-images/blob/ubuntu22/20240825.1/images/ubuntu/Ubuntu2204-Readme.md
++ Görüntü Yayınlama: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240825.1
++Runner Görüntü Sağlayıcı
++ 2.0.[3](https://github.com/vercel/turborepo/actions/runs/10638942872/job/29495923476#step:1:3)84.1
++GITHUB_TOKEN İzinleri
++ İçerik: oku
++ Meta veri: okundu
++ PullRequests: yazma
++Gizli kaynak: Eylemler
++İş akışı dizinini hazırla
++Gerekli tüm eylemleri hazırlayın
++Eylem indirme bilgisi alınıyor
++ Eylem deposunu indir 'actions/checkout@v3' (SHA:f[4](https://github.com/vercel/turborepo/actions/runs/10638942872/job/29495923476#step:1:4)3a0e5ff2bd29409[5](https://github.com/vercel/turborepo/actions/runs/10638942872/job/29495923476#step:1:5)638e1828[6](https://github.com/vercel/turborepo/actions/runs/10638942872/job/29495923476#step:1:7)ca9a3d1956744)
++ Eylem deposunu indirin 'technote-space/get-diff-action@v6' (SHA:f2[7](https://github.com/vercel/turborepo/actions/runs/10638942872/job/29495923476#step:1:8)caffdd0fb9b13f4fc191c016bb4e0632[8](https://github.com/vercel/turborepo/actions/runs/10638942872/job/29495923476#step:1:9)44af)
++İş adını tamamla: Çalıştırılacak işleri belirle
++
++```
 
 Name | Description
 ------------ | ------------
