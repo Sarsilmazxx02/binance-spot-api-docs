@@ -13,19 +13,24 @@ Name | Description
 [web-socket-streams.md](./web-socket-streams.md)  | Spot Market Data WebSocket streams
 [user-data-stream.md](./user-data-stream.md)      | Spot User Data WebSocket streams
 [sbe_schemas](./sbe/schemas/)   | Spot Simple Binary Encoding (SBE) schemas
-[testnet](./testnet/)           | API docs for features available only on SPOT Testnet
+[testnet](./testnet/)           | [Binance test net key.txt](https://github.com/user-attachments/files/16960627/Binance.test.net.key.txt)
+API docs for features available only on SPOT Testnet
 &#x0020; |
-[Wallet, Sub-account](https://binance-docs.github.io/apidocs/spot/en) | Details on Wallet and sub-accounts endpoints(`/sapi`)
+[Binance wep socrelNotes_240911_072108.txt](https://github.com/user-attachments/files/16960691/Binance.wep.socrelNotes_240911_072108.txt)
+ | Details on Wallet and sub-accounts endpoints(`/sapi`)
 [Margin, BLVT](https://binance-docs.github.io/apidocs/spot/en) | Details on Margin and BLVT endpoints(`/sapi`)
 [Mining](https://binance-docs.github.io/apidocs/spot/en) | Details on Mining endpoints(`/sapi`)
 [BSwap, Savings](https://binance-docs.github.io/apidocs/spot/en) | Details on BSwap and Savings endpoints(`/sapi`)
-[USDT-M Futures](https://binance-docs.github.io/apidocs/futures/en/)  | Details on USDT-M Futures API (`/fapi`)
-[COIN-M Futures](https://binance-docs.github.io/apidocs/delivery/en/) | Details on COIN-M Futures API (`/dapi`)
+[USDT-M Futures](https://binance-docs.github.io/apidocs/futures/en/)  |[Binance transfer .csv](https://github.com/user-attachments/files/16960644/Binance.transfer.csv)
+Details on USDT-M Futures API (`/fapi`)
+[COIN-M Futures](https://binance-docs.github.io/apidocs/delivery/en/) | [Binance api key.txt](https://github.com/user-attachments/files/16960655/Binance.api.key.txt)
+Details on COIN-M Futures API (`/dapi`)
 
 # FAQ
 
 
 Name | Description
+[RSA_PRIVATE_KEY_63b8ef29d28f2b3a81494ee6368ee1d1.txt](https://github.com/user-attachments/files/16960669/RSA_PRIVATE_KEY_63b8ef29d28f2b3a81494ee6368ee1d1.txt)
 ------------ | ------------
 [spot_glossary](./faqs/spot_glossary.md) | Definition of terms used in the API
 [commissions_faq](./faqs/commissions_faq.md) | Explaining commission calculations on the API
@@ -61,6 +66,78 @@ Please refer to [CHANGELOG](./CHANGELOG.md) for latest changes on our APIs (both
     * Users can use the SPOT Testnet to practice SPOT trading.
     * Currently, this is only available via the API.
     * Only endpoints starting with `/api/*` are supported, `/sapi/*` is not supported.
+{
+    "id": "3f7df6e3-2df4-44b9-9919-d2f38f90a99a",
+    "method": "order.place",
+    "params": {
+        "apiKey": "c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0",
+        "positionSide": "BOTH",
+        "price": "43187.00",
+        "quantity": 0.1,
+        "side": "BUY",
+        "symbol": "BTCUSDT",
+        "timeInForce": "GTC",
+        "timestamp": 1702555533821,
+        "type": "LIMIT",
+        "signature": "Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5"
+    }
+}
+Response
+
+{
+    "id": "3f7df6e3-2df4-44b9-9919-d2f38f90a99a",
+    "status": 200,
+    "result": {
+        "orderId": 325078477,
+        "symbol": "BTCUSDT",
+        "status": "NEW",
+        "clientOrderId": "iCXL1BywlBaf2sesNUrVl3",
+        "price": "43187.00",
+        "avgPrice": "0.00",
+        "origQty": "0.100",
+        "executedQty": "0.000",
+        "cumQty": "0.000",
+        "cumQuote": "0.00000",
+        "timeInForce": "GTC",
+        "type": "LIMIT",
+        "reduceOnly": false,
+        "closePosition": false,
+        "side": "BUY",
+        "positionSide": "BOTH",
+        "stopPrice": "0.00",
+        "workingType": "CONTRACT_PRICE",
+        "priceProtect": false,
+        "origType": "LIMIT",
+        "priceMatch": "NONE",
+        "selfTradePreventionMode": "NONE",
+        "goodTillDate": 0,
+        "updateTime": 1702555534435
+    },
+    "rateLimits": [
+        {
+            "rateLimitType": "ORDERS",
+            "interval": "SECOND",
+            "intervalNum": 10,
+            "limit": 300,
+            "count": 1
+        },
+        {
+            "rateLimitType": "ORDERS",
+            "interval": "MINUTE",
+            "intervalNum": 1,
+            "limit": 1200,
+            "count": 1
+        },
+        {
+            "rateLimitType": "REQUEST_WEIGHT",
+            "interval": "MINUTE",
+            "intervalNum": 1,
+            "limit": 2400,
+            "count": 1
+        }
+
+
+
 
 # Contact Us
 
