@@ -1,0 +1,12 @@
+Bibance testnet 
+HMAC-SHA-256 Anahtar kaydedildi
+
+Bu değerleri hemen kaydedin . Bir daha asla gösterilmeyecekler!
+
+API Anahtarı:iXs9NbhXNT2Wp51zhUfARuFxE9oA3yXNIAjmqwTePPbNlQtneFLfQBnt9sEmTbPC
+
+Gizli Anahtar:1X2ncK0HkejcQF0KGJDkvC7xNC233o4SJVCVto5UjRgYvhVtxdPu0poi50TDU3hX
+
+Geri
+
+Şartlar | Gizlilik | © 2017 - 2024 Binance.com. Tüm hakları saklıdır
