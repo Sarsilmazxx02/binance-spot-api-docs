@@ -149,4 +149,91 @@ Response
 * [Binance Customer Support](https://www.binance.com/en/support-center)
     * For cases such as missing funds, help with 2FA, etc.
 
+
 ```
+
+{
+    "contributes": {
+        "x-github-workflows": [
+            {
+                "workflow": "deployments/azure-webapps-dotnet-core"
+            }
+        ]
+    }
+}
+
+{
+    "contributes": {
+        "x-github-workflows": [
+            {
+                "workflow": "my-deployment-workflow-type",
+                "title": "My Deployment Workflow",
+                "description": "A workflow to automate deployment of my service type",
+                "group": "deployments"
+            }
+        ]
+    }
+}
+import * as vscode from 'vscode';
+import { GitHubActionsApi, GitHubActionsApiManager } from 'vscode-github-actions-api';
+
+export function activate(context) {
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "my-extension.workflow.create",
+      async () =>[devcontainer (2).json](https://github.com/user-attachments/files/16963157/devcontainer.2.json)
+ {
+        const gitHubActionsExtension = vscode.extensions.getExtension('cschleiden.vscode-github-actions');
+
+        if (gitHubActionsExtension) {
+          await gitHubActionsExtension.activate();
+
+          const manager: GitHubActionsApiManager | undefined = gitHubActionsExtension.exports as GitHubActionsApiManager;
+
+          if (manager) {
+            const api: GitHubActionsApi | undefined = manager.getApi(1);
+
+            if (api) {
+              const workflowFiles = await api.createWorkflow(`deployments/azure-webapps-dotnet-core`);
+
+              // Open all created workflow files...
+              await Promise.all(workflowFiles.map(file => vscode.window.showTextDocument(file)));
+            }
+          }
+      }));
+}
+import * as vscode from 'vscode';
+import { GitHubActionsApi, GitHubActionsApiManager } from 'vscode-github-actions-api';
+
+export function activate(context) {
+    const gitHubActionsExtension = vscode.extensions.getExtension('cschleiden.vscode-github-actions');
+
+    if (gitHubActionsExtension) {
+        await gitHubActionsExtension.activate();
+
+        const manager: GitHubActionsApiManager | undefined = gitHubActionsExtension.exports as GitHubActionsApiManager;
+
+        if (manager) {
+            const api: GitHubActionsApi | undefined = manager.getApi(1);
+
+            if (api) {
+                context.subscriptions.push(
+                  api.registerWorkflowProvider(
+                    'deployments/azure-webapps-dotnet-core',
+                    {
+                        createWorkflow: async (context): Promise<void> => {
+
+                        const xml: string = // Get Azure publish profile XML...
+
+                        await context.setSecret('AZURE_WEBAPP_PUBLISH_PROFILE', xml);
+
+                        let content = context.content;
+
+                        // Transform content (e.g. replace `your-app-name` with application name)...
+
+                        await context.createWorkflowFile(context.suggestedFileName ?? 'azure-webapps-dotnet-core.yml', content);
+                    }));
+            }
+         }
+      }
+}
