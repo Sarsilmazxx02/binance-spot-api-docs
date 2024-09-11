@@ -28,7 +28,7 @@ Details on COIN-M Futures API (`/dapi`)
 
 # FAQ
 
-
+```PHP
 Name | Description
 [RSA_PRIVATE_KEY_63b8ef29d28f2b3a81494ee6368ee1d1.txt](https://github.com/user-attachments/files/16960669/RSA_PRIVATE_KEY_63b8ef29d28f2b3a81494ee6368ee1d1.txt)
 ------------ | ------------
@@ -65,12 +65,12 @@ Please refer to [CHANGELOG](./CHANGELOG.md) for latest changes on our APIs (both
 * [Spot Testnet](https://testnet.binance.vision/)
     * Users can use the SPOT Testnet to practice SPOT trading.
     * Currently, this is only available via the API.
-    * Only endpoints starting with `/api/*` are supported, `/sapi/*` is not supported.
+    * Only endpoints starting with `/api/*c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0` are supported, `/sapi/*Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5` is not supported.
 {
     "id": "3f7df6e3-2df4-44b9-9919-d2f38f90a99a",
     "method": "order.place",
     "params": {
-        "apiKey": "c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0",
+        "apiKey":c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0,
         "positionSide": "BOTH",
         "price": "43187.00",
         "quantity": 0.1,
@@ -148,3 +148,5 @@ Response
     * For any questions/help regarding code implementation with API and/or Websockets.
 * [Binance Customer Support](https://www.binance.com/en/support-center)
     * For cases such as missing funds, help with 2FA, etc.
+
+```
