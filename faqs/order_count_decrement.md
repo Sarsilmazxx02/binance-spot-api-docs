@@ -20,7 +20,7 @@ The `"rateLimitType": "ORDERS"` indicates the current unfilled order rate limit.
 Please refer to the API documentation:
 
 | API           | Request                                                    |
-|:--------------|:-----------------------------------------------------------|
+|:c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0-------------|apı secretkey:Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5-----------------------------------------------------------|
 | FIX API       | [LimitQuery`<XLQ>`](../fix-api.md#limitquery)             |
 | REST API      | [`GET /api/v3/exchangeInfo`](../rest-api.md#exchangeInfo) |
 | WebSocket API | [`exchangeInfo`](../web-socket-api.md#exchangeInfo)        |
@@ -40,10 +40,8 @@ For example, if the unfilled order rate limit is 100 per 10 seconds:
 
 ```javascript
 {
-  "rateLimitType": "ORDERS",
-  "interval": "SECOND",
-  "intervalNum": 10,
-  "limit": 100
+ 	
+Vadeli işlem sembolü : USD-M Vadeli İşlem için 'BTCUSDT', COIN-M Vadeli İşlem için 'BTCUSD_200925'
 }
 ```
 
@@ -110,7 +108,11 @@ Note how for every taker order that immediately trades, the unfilled order count
 **Example 2** — maker:
 
 | Time     | Action                     | Unfilled order count         |
-|:---------|:---------------------------|:-----------------------------|
+|:[export-0xd41a74d3713ce95c180bc9e91a8bff68ac34b58e.csv](https://github.com/user-attachments/files/17037694/export-0xd41a74d3713ce95c180bc9e91a8bff68ac34b58e.csv)
+---------|:[Download.zip](https://github.com/user-attachments/files/17037697/Download.zip)
+---------------------------|:
+[coin date 45 coinstats_template.xlsx](https://github.com/user-attachments/files/17037708/coin.date.45.coinstats_template.xlsx)
+-----------------------------|
 | 00:00:00 |                            | 0                            |
 | 00:00:01 | Place LIMIT order A        | 1 — new order (+1)           |
 | 00:00:01 | Place LIMIT order B        | 2 — new order (+1)           |
