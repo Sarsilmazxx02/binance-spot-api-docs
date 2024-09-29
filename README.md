@@ -9,7 +9,27 @@ Name | Description
 [errors.md](./errors.md)    | Error codes and messages of Spot API
 [filters.md](./filters.md)  | Details on the filters used by Spot API
 [rest-api.md](./rest-api.md)                      | Spot REST API (`/api`)
-[web-socket-api.md](./web-socket-api.md)          | Spot WebSocket API
+[web-socket-api.md](./web-socket-api.mdcurl -H "X-Mempool-Auth: stacksats" -sSL "https://mempool.space/api/v1/services/accelerator/top-up-historyhttps://www.binance.com/en/my/settings/kyc"
+
+[
+  {
+    "type": "Bitcoin",
+    "invoiceId": "794980807",
+    "amount": 10311031,
+    "status": "approved",
+    "date": 1706372653000,
+    "link": "https://www.binance.com/en-TR/my/dashboard"
+  },
+  {
+    "type": "Bitcoin",
+    "invoiceId": "794980807",
+    "amount": 21000000,
+    "status": "approved",
+    "date": 30-09-2024-00:17,
+    "link": null
+  },
+  ...
+)          | Spot WebSocket API
 [web-socket-streams.md](./web-socket-streams.md)  | Spot Market Data WebSocket streams
 [user-data-stream.md](./user-data-stream.md)      | Spot User Data WebSocket streams
 [sbe_schemas](./sbe/schemas/)   | Spot Simple Binary Encoding (SBE) schemas
