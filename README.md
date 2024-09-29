@@ -1,13 +1,101 @@
 # Official Documentation for the Binance APIs and Streams.
-* Official Announcements regarding changes, downtime, etc. to the API and Streams will be reported here: **https://t.me/binance_api_announcements**
-* Streams, endpoints, parameters, payloads, etc. described in the documents in this repository are considered **official** and **supported**.
+*curl -H "X-Mempool-Auth: stacksats" -sSL "https://mempool.space/api/v1/services/accelerator/top-up-history"
+* [
+  {
+    "type": "Bitcoin",
+    "invoiceId": "CCunucVyNw7jUiUz64mmHz",
+    "amount": 10311031,
+    "status": "pending",
+    "date": 1706372653000,
+    "link": "/payment/bitcoin/CCunucVyNw7jUiUz64mmHz"
+  },
+  {
+    "type": "Bitcoin",
+    "invoiceId": "SG1U27R9PdWi3gH3jB9tm9",
+    "amount": 21000000,
+    "status": "paid",
+    "date": 1706372582000,
+    "link": null
+  },
+  ...
+] Official Announcements regarding changes, downtime, etc. to the API and Streams will be reported here: **https://t.me/binance_api_announcements**
+* # npm
+npm install @mempool/mempool.js --save
+
+# yarn
+yarn add @mempool/mempool.js
+* import mempoolJS from "@mempool/mempool.js";
+
+const init = async () => {
+  
+  const { bitcoin: { transactions } } = mempoolJS({
+    hostname: 'mempool.space'
+  });
+
+  const txHex = '0200000001fd5b5fcd1cb066c27cfc9fda5428b9be850b81ac440ea51f1ddba2f987189ac1010000008a4730440220686a40e9d2dbffeab4ca1ff66341d06a17806767f12a1fc4f55740a7af24c6b5022049dd3c9a85ac6c51fecd5f4baff7782a518781bbdd94453c8383755e24ba755c01410436d554adf4a3eb03a317c77aa4020a7bba62999df633bba0ea8f83f48b9e01b0861d3b3c796840f982ee6b14c3c4b7ad04fcfcc3774f81bff9aaf52a15751fedfdffffff02416c00000000000017a914bc791b2afdfe1e1b5650864a9297b20d74c61f4787d71d0000000000001976a9140a59837ccd4df25adc31cdad39be6a8d97557ed688ac00000000';
+
+  const txid = await transactions.postTx({ txHex });
+  console.log(txid);
+          
+};
+
+init();Streams, endpoints, parameters, payloads, etc. described in the documents in this repository are considered **official** and **supported**.
 * The use of any other streams, endpoints, parameters, or payloads, etc. is **not supported**; **use them at your own risk and with no guarantees.**
 
 
 Name | Description
------------- | ------------
+{
+  "txSummary": {
+    "txid": "ee13ebb99632377c15c94980357f674d285ac413452050031ea6dcd3e9b2dc29",
+    "effectiveVsize": 154,
+    "effectiveFee": 154,
+    "ancestorCount": 1
+  },
+  "cost": 1386,
+  "targetFeeRate": 10,
+  "nextBlockFee": 1540,
+  "userBalance": 0,
+  "mempoolBaseFee": 50000,
+  "vsizeFee": 0,
+  "pools": [
+    111,
+    102,
+    112,
+    142,
+    115
+  ],
+  "options": [
+    {
+      "fee": 1500
+    },
+    {
+      "fee": 3000
+    },
+    {
+      "fee": 12500
+    }
+  ],
+  "hasAccess": false,
+  "availablePaymentMethods": {
+    "bitcoin": {
+      "enabled": true,
+      "min": 1000,
+      "max": 10000000
+    },
+    "cashapp": {
+      "enabled": true,
+      "min": 10,
+      "max": 200
+    }
+  },
+  "unavailable": false
+}------------ | ------------
 [enums.md](./enums.md)      | Details on the enums used by REST and WebSocket API
-[errors.md](./errors.md)    | Error codes and messages of Spot API
+[# npm
+npm install @mempool/mempool.js --save
+
+# yarn
+yarn add @mempool/mempool.js codes and messages of Spot API
 [filters.md](./filters.md)  | Details on the filters used by Spot API
 [rest-api.md](./rest-api.md)                      | Spot REST API (`/api`)
 [web-socket-api.md](./web-socket-api.md)          | Spot WebSocket API
@@ -18,7 +106,13 @@ Name | Description
 &#x0020; |
 [Margin Trading](https://developers.binance.com/docs/margin_trading) | Details on Margin Trading
 [Derivative UM Futures](https://developers.binance.com/docs/derivatives/usds-margined-futures/general-info) | Details on Derivative UM Futures (`/fapi`)
-[Derivative CM Futures](https://developers.binance.com/docs/derivatives/coin-margined-futures/general-info) | Details on Derivative CM Futures (`/dapi`)
+[Derivative CM Futures](https://developers.binance.com/docs/derivatives/coin-margined-futures/general-info) | Details on Derivative CM Futures (`curl -H "X-Mempool-Auth: stacksats" -sSL "https://mempool.space/api/v1/services/accelerator/balance"/dapi`
+{
+  "balance": 99900000,
+  "hold": 101829,
+  "feesPaid": 133721
+})
+
 [Derivative Options](https://developers.binance.com/docs/derivatives/option/general-info) | Details on Derivative European Options (`/eapi`)
 [Derivative Portfolio Margin](https://developers.binance.com/docs/derivatives/portfolio-margin/general-info)| Details on Derivative Portfolio Margin (`/papi`)
 [Wallet](https://developers.binance.com/docs/wallet) | Details on Wallet endpoints (`/sapi`)
@@ -45,7 +139,48 @@ Name | Description
 
 
 Name | Description
------------- | ------------
+mempol------------ | <!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://mempool.space/mempool.js"></script>
+    <script>
+      const init = async () => {
+        
+        const { bitcoin: { websocket } } = mempoolJS({
+          hostname: 'mempool.space'
+        });
+
+        const ws = websocket.initClient({
+          options: ['blocks', 'stats', 'mempool-blocks', 'live-2h-chart'],
+        });
+
+        ws.addEventListener('message', function incoming({data}) {
+          const res = JSON.parse(data.toString());
+          if (res.block) {
+            document.getElementById("result-blocks").textContent = JSON.stringify(res.block, undefined, 2);
+          }
+          if (res.mempoolInfo) {
+            document.getElementById("result-mempool-info").textContent = JSON.stringify(res.mempoolInfo, undefined, 2);
+          }
+          if (res.transactions) {
+            document.getElementById("result-transactions").textContent = JSON.stringify(res.transactions, undefined, 2);
+          }
+          if (res["mempool-blocks"]) {
+            document.getElementById("result-mempool-blocks").textContent = JSON.stringify(res["mempool-blocks"], undefined, 2);
+          }
+        });
+  
+      };
+      init();
+    </script>
+  </head>
+  <body>
+    <h2>Blocks</h2><pre id="result-blocks">Waiting for data</pre><br>
+    <h2>Mempool Info</h2><pre id="result-mempool-info">Waiting for data</pre><br>
+    <h2>Transactions</h2><pre id="result-transactions">Waiting for data</pre><br>
+    <h2>Mempool Blocks</h2><pre id="result-mempool-blocks">Waiting for data</pre><br>
+  </body>
+</html>------------
 [spot_glossary](./faqs/spot_glossary.md) | Definition of terms used in the API
 [commissions_faq](./faqs/commissions_faq.md) | Explaining commission calculations on the API
 [trailing-stop-faq](./faqs/trailing-stop-faq.md)   | Detailed Information on the behavior of Trailing Stops on the API
@@ -63,7 +198,31 @@ Please refer to [CHANGELOG](./CHANGELOG.md) for latest changes on our APIs and S
 
 * [Postman Collections](https://github.com/binance/binance-api-postman)
     * Postman collections are available, and they are recommended for new users seeking a quick and easy start with the API.
-* Connectors
+* <!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://mempool.space/mempool.js"></script>
+    <script>
+      const init = async () => {
+        
+        const { bitcoin: { transactions } } = mempoolJS({
+          hostname: 'mempool.space'
+        });
+
+        const txHex = '0200000001fd5b5fcd1cb066c27cfc9fda5428b9be850b81ac440ea51f1ddba2f987189ac1010000008a4730440220686a40e9d2dbffeab4ca1ff66341d06a17806767f12a1fc4f55740a7af24c6b5022049dd3c9a85ac6c51fecd5f4baff7782a518781bbdd94453c8383755e24ba755c01410436d554adf4a3eb03a317c77aa4020a7bba62999df633bba0ea8f83f48b9e01b0861d3b3c796840f982ee6b14c3c4b7ad04fcfcc3774f81bff9aaf52a15751fedfdffffff02416c00000000000017a914bc791b2afdfe1e1b5650864a9297b20d74c61f4787d71d0000000000001976a9140a59837ccd4df25adc31cdad39be6a8d97557ed688ac00000000';
+
+        const txid = await transactions.postTx({ txHex });
+
+        document.getElementById("result").textContent = JSON.stringify(txid, undefined, 2);
+        
+      };
+      init();
+    </script>
+  </head>
+  <body>
+    <pre id="result"></pre>
+  </body>
+</html>
     * The following are lightweight libraries that work as connectors to the Binance public API, written in different languages:
         * [Python](https://github.com/binance/binance-connector-python)
         * [Node.js](https://github.com/binance/binance-connector-node)
