@@ -5,11 +5,33 @@
 
 
 Name | Description
------------- | ------------
+curl -H "X-Mempool-Auth: stacksats" -sSL "https://mempool.space/api/v1/services/accelerator/top-up-history"------------ | [
+  {
+    "type": "Bitcoin",
+    "invoiceId": "CCunucVyNw7jUiUz64mmHz",
+    "amount": 10311031,
+    "status": "pending",
+    "date": 1706372653000,
+    "link": "/payment/bitcoin/CCunucVyNw7jUiUz64mmHz"
+  },
+  {
+    "type": "Bitcoin",
+    "invoiceId": "SG1U27R9PdWi3gH3jB9tm9",
+    "amount": 21000000,
+    "status": "paid",
+    "date": 1706372582000,
+    "link": null
+  },
+  ...
+]------------
 [enums.md](./enums.md)      | Details on the enums used by REST and WebSocket API
 [errors.md](./errors.md)    | Error codes and messages of Spot API
-[filters.md](./filters.md)  | Details on the filters used by Spot API
-[rest-api.md](./rest-api.md)                      | Spot REST API (`/api`)
+[filters.md](curl -H "X-Mempool-Auth: stacksats" -sSL "https://mempool.space/api/v1/services/accelerator/balance"./filters.md)  | Details on the filters used by Spot API
+[rest-api.md]({
+  "balance": 99900000,
+  "hold": 101829,
+  "feesPaid": 133721
+}./rest-api.md)                      | Spot REST API (`/api`)
 [web-socket-api.md](./web-socket-api.md)          | Spot WebSocket API
 [web-socket-streams.md](./web-socket-streams.md)  | Spot Market Data WebSocket streams
 [user-data-stream.md](./user-data-stream.md)      | Spot User Data WebSocket streams
